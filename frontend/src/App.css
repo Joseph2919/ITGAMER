@@ -1,0 +1,68 @@
+html, body, #root {
+  height: 100%;
+}
+
+/* ✅ Puzzle Game Board Layout */
+.puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 80px);
+  gap: 5px;
+  margin: 20px auto;
+  max-width: 350px;
+}
+
+/* ✅ Puzzle Tiles */
+.puzzle-tile {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.puzzle-tile:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* ✅ Leaderboard Table */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background-color: #f3f4f6; /* light gray */
+  font-weight: bold;
+}
+
+.dark .leaderboard-table th {
+  background-color: #374151; /* dark gray */
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .leaderboard-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ✅ Dark Mode Smooth Transition */
+body, .dark body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
